@@ -4,7 +4,6 @@ import (
 	"bytes"
 	"context"
 	"encoding/json"
-	"fmt"
 	"github.com/netomathias/bts-client/errors"
 	"net/http"
 )
@@ -29,7 +28,7 @@ func (s *Service) Create(ctx context.Context, logData LogDataRequest) (*LogDataR
 		return nil, err
 	}
 
-	endpoint := fmt.Sprintf("%s/", s.UrlBase)
+	endpoint := "https://in.logs.betterstack.com"
 
 	req, err := http.NewRequestWithContext(ctx, http.MethodPost, endpoint, bytes.NewBuffer(j))
 	if err != nil {
