@@ -29,7 +29,7 @@ func (s *Service) Create(ctx context.Context, logData LogDataRequest) (*LogDataR
 		return nil, err
 	}
 
-	endpoint := fmt.Sprintf("%s/")
+	endpoint := fmt.Sprintf("%s/", s.UrlBase)
 
 	req, err := http.NewRequestWithContext(ctx, http.MethodPost, endpoint, bytes.NewBuffer(j))
 	if err != nil {
