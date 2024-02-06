@@ -59,3 +59,11 @@ func (s *Service) Create(ctx context.Context, logData LogDataRequest) (*LogDataR
 
 	return response, nil
 }
+
+func (s *Service) CreateRequest() LogDataRequest {
+	return LogDataRequest{}
+}
+
+func (s *Service) CreateResponse() LogDataResponse {
+	return LogDataResponse{}
+}
