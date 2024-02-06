@@ -60,10 +60,21 @@ func (s *Service) Create(ctx context.Context, logData LogDataRequest) (*LogDataR
 	return response, nil
 }
 
-func (s *Service) CreateRequest() LogDataRequest {
-	return LogDataRequest{}
+func (s *Service) CreateLogDataRequest(message string, nested Nested) LogDataRequest {
+	return LogDataRequest{
+		Message: message,
+		Nested:  nested,
+	}
 }
 
-func (s *Service) CreateResponse() LogDataResponse {
-	return LogDataResponse{}
+func (s *Service) CreateNested(values any) Nested {
+	return Nested{
+		Values: values,
+	}
+}
+
+func (s *Service) CreateLogDataResponse(message string) LogDataResponse {
+	return LogDataResponse{
+		Message: message,
+	}
 }

@@ -1,12 +1,12 @@
 package log
 
 type LogDataRequest struct {
-	Message string
-	Nested  Nested
+	Message string `json:"message"`
+	Nested  Nested `json:"nested"`
 }
 
 type Nested struct {
-	Values any
+	Values any `json:"values"`
 }
 
 type LogDataResponse struct {
